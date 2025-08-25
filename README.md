@@ -44,7 +44,7 @@ npm run dev
 VITE_OMDB_KEY=your_api_key_here
 
 # Deployment Live App
-[Click Here]()
+[Click Here](https://movie-explorer-vite-tailwind.netlify.app/)
 
 # Screenshot
 ![alt text](<Screenshot 2025-08-25 195342.png>)
