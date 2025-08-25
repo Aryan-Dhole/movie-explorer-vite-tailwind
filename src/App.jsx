@@ -21,15 +21,20 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-6">
-      <h1 className="text-3xl font-bold mb-6 text-center">
+      <h1 className="text-3xl font-bold mb-12 text-center">
         🎬 Movie Explorer
       </h1>
 
-      <div className="flex justify-center mb-8">
+      <div className="flex justify-center mb-16">
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              fetchMovies();
+            }
+          }}
           placeholder="Search movies..."
           className="px-4 py-2 w-150 rounded-l-md text-white focus:outline-white-1"
         />
@@ -41,7 +46,7 @@ function App() {
         </button>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
         {movies.length > 0 ? (
           movies.map((movie) => (
             <div
